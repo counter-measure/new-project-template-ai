@@ -64,3 +64,6 @@ The file should have the following fields and format:
 
 ### Linear 
 Run `./upload-tasks.sh` to upload tasks.json to Linear app using the automated script.
+
+### Implementation
+Follow the instructions in build.md to implement the Linear tickets.
