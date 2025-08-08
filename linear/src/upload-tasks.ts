@@ -246,7 +246,7 @@ class LinearTaskUploader {
     await this.initialize();
 
     // Find team
-    const teamName = projectMetadata.teams[0] || process.env.DEFAULT_TEAM || 'Engineering';
+    const teamName = projectMetadata.teams[0] || process.env.DEFAULT_TEAM || 'Product';
     const teamId = this.teams.get(teamName);
     
     if (!teamId) {
