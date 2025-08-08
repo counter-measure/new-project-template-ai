@@ -63,4 +63,4 @@ The file should have the following fields and format:
 ```
 
 ### Linear 
-Follow the instructions in linear-tasks-prompt.md to create linear issues using the tasks.json file.
+Run `./upload-tasks.sh` to upload tasks.json to Linear app using the automated script.

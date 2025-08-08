@@ -6,6 +6,12 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
+# Linear uploader specific
+linear/node_modules/
+linear/package-lock.json
+linear/dist/
+linear/.env
+
 # Environment variables
 .env
 .env.local
