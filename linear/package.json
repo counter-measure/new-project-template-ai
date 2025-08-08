@@ -1,0 +1,23 @@
+{
+  "name": "linear-tasks-uploader",
+  "version": "1.0.0",
+  "description": "Upload tasks from JSON to Linear",
+  "main": "dist/upload-tasks.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/upload-tasks.js",
+    "dev": "ts-node src/upload-tasks.ts"
+  },
+  "dependencies": {
+    "@linear/sdk": "^2.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "keywords": ["linear", "tasks", "upload"],
+  "author": "",
+  "license": "MIT"
+}

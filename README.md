@@ -92,31 +92,32 @@ The system generates a `tasks.json` file with the following structure:
 ```
 
 ### Linear Integration
-Use the `linear-tasks-prompt.md` file to create Linear issues from your `tasks.json`:
+Use the automated Linear uploader script to create Linear issues from your `tasks.json`:
 
-1. **Connect to Linear MCP** - Use the Linear MCP to interact with your Linear workspace
-2. **Get Project ID** - Retrieve the Linear Project ID for your project
-3. **Assign to Engineering Team** - All issues will be assigned to the "Engineering" team
-4. **Create Issues** - Generate Linear issues for each task in `tasks.json`
-5. **Set Priorities** - Map task priorities:
-   - P0 = High (2)
-   - P1 = Medium (3)
-   - P2 = Low (4)
-   - P3 = No Priority (0)
-6. **Set Estimates** - Map effort to estimates:
-   - 1 hr = XS (1)
-   - 0.5 day = S (2)
-   - 1 day = M (3)
-   - 2 day = L (4)
-   - 3 day = XL (5)
-   - 3 to 5 day = XXL (6)
-   - >5 day = XXXL (7)
+1. **Set up the uploader** - Navigate to the `linear/` directory and configure your API key
+2. **Run the script** - Execute `./upload-tasks.sh` from the project root
+3. **Automatic mapping** - The script automatically:
+   - Maps project name from `project_metadata.json`
+   - Assigns to the first team in `project_metadata.json` or uses `DEFAULT_TEAM`
+   - Creates issues with proper priority mapping:
+     - P0 = High (2)
+     - P1 = Medium (3)
+     - P2 = Low (4)
+     - P3 = No Priority (0)
+   - Sets estimates based on effort:
+     - 1 hr = XS (1)
+     - 0.5 day = S (2)
+     - 1 day = M (3)
+     - 2 day = L (4)
+     - 3 day = XL (5)
+     - 3 to 5 day = XXL (6)
+   - Creates labels from epic names
+   - Includes acceptance criteria and definition of done
 
 ## File Structure
 
 - `overview.md` - Project concept and goals
 - `main.md` - Main workflow instructions for AI
-- `linear-tasks-prompt.md` - Linear integration instructions
 - `project_metadata.json` - Project configuration
 - `prd.md` - Product Requirements Document (generated)
 - `user_stories.md` - User Stories (generated)
@@ -124,21 +125,23 @@ Use the `linear-tasks-prompt.md` file to create Linear issues from your `tasks.j
 - `tech_requirements.md` - Technical Requirements (generated)
 - `ui_design.md` - UI Design (generated, if applicable)
 - `tasks.json` - Prioritized task list (generated)
+- `linear/` - Linear uploader script and configuration
 
 ## Best Practices
 
 1. **Start with a Clear Overview** - Write a comprehensive `overview.md` that clearly defines your project goals and approach
 2. **Iterate on Documentation** - Review and refine each generated document before proceeding to the next
 3. **Validate Tasks** - Ensure the generated tasks accurately reflect your project requirements
-4. **Customize Linear Setup** - Adjust team assignments and project settings in Linear as needed
+4. **Configure Linear Uploader** - Set up your Linear API key and team configuration before running the uploader
 5. **Maintain Consistency** - Keep all documentation and tasks aligned with your project vision
 
 ## Getting Help
 
 If you encounter issues or need assistance:
 1. Review the generated documentation for completeness
-2. Check that all Linear integrations are properly configured
+2. Check that your Linear API key is properly configured in `.env`
 3. Ensure your `project_metadata.json` contains accurate information
 4. Verify that your `overview.md` provides sufficient context for AI generation
+5. Check the `linear/README-linear-uploader.md` for detailed uploader instructions
 
 This template provides a comprehensive foundation for AI-assisted project development, from initial concept to detailed task management and Linear integration.
