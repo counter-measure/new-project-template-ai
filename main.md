@@ -1,5 +1,5 @@
 # Main Prompt
-This prompt controls the generation of documentation for Everclear's projects and linear tickets.
+This prompt controls the generation of documentation for creating new projects and linear tickets using AI.
 
 ## Overview.md 
 The user has created the file overview.md which contains the overview of this project.
