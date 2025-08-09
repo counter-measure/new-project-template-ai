@@ -3,7 +3,7 @@
 Use the Linear project specified in project_metadata.json as the source of truth for issues including description and issue status.
 
 ## Task Tracking
-1. Get all tasks and their statuses from Linear project specified in project_metadata.json
+1. Get all tasks and their statuses from Linear project specified in project_metadata.json using the linear MCP
 2. Follow the Approach section below to implement the code 
 3. Once the feature is working update the linear issue status to 4 "In review"
 4. Move onto the next task
