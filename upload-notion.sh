@@ -7,13 +7,6 @@ set -e  # Exit on any error
 
 echo "🚀 Starting Notion upload process..."
 
-# Check if NOTION_API_KEY is set
-if [ -z "$NOTION_API_KEY" ]; then
-    echo "❌ Error: NOTION_API_KEY environment variable is not set"
-    echo "Please set it with: export NOTION_API_KEY='your_notion_api_key'"
-    exit 1
-fi
-
 # Check if project_metadata.json exists
 if [ ! -f "project_metadata.json" ]; then
     echo "❌ Error: project_metadata.json not found in current directory"
