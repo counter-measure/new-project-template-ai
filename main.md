@@ -26,6 +26,8 @@ Follow the sequence above to produce each of the following documents in order:
 4. Technical requirements document in the file tech_requirements.md
 5. If the project requires a UI design create it in the file ui_design.md
 
+Run `upload-notion.sh` to upload the markdown documents to Notion app using the automated script.
+
 ### Tasks
 Read all markdown files in this directory and create a prioritised task list tasks.json.
 The file should have the following fields and format:
@@ -64,3 +66,6 @@ The file should have the following fields and format:
 
 ### Linear 
 Run `./upload-tasks.sh` to upload tasks.json to Linear app using the automated script.
+
+### Implementation
+Follow the instructions in build.md to implement the Linear tickets.
