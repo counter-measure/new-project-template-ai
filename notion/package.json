@@ -1,0 +1,22 @@
+{
+  "name": "notion-uploader",
+  "version": "1.0.0",
+  "description": "Upload project documents to Notion",
+  "main": "upload-to-notion.ts",
+  "scripts": {
+    "upload": "ts-node upload-to-notion.ts",
+    "build": "tsc",
+    "start": "node dist/upload-to-notion.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.14"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "keywords": ["notion", "upload", "typescript"],
+  "author": "",
+  "license": "MIT"
+}

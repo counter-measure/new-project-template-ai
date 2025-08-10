@@ -114,6 +114,31 @@ Use the automated Linear uploader script to create Linear issues from your `task
    - Creates labels from epic names
    - Includes acceptance criteria and definition of done
 
+### Notion Integration
+After all documents have been created and reviewed, use the automated Notion uploader script to create Notion pages from your project documentation:
+
+1. **Get your Notion Parent Page ID**:
+   - Navigate to the Notion page where you want to create your project
+   - Copy the page URL from your browser
+   - Extract the page ID from the URL:
+     - **Standard Notion URLs**: `https://www.notion.so/workspace-name/Page-Title-24b24f9af453800fb948c7f39ca6f6ce`
+     - **Page ID**: The last 32 characters after the final hyphen (`24b24f9af453800fb948c7f39ca6f6ce`)
+     - **Shared URLs**: `https://www.notion.so/Page-Title-24b24f9af453800fb948c7f39ca6f6ce?v=...`
+   - Update `project_metadata.json` with your `notion_parent_page_id`
+
+2. **Set up the uploader**:
+   - Navigate to the `notion/` directory
+   - Copy `env.example` to `.env` and add your Notion integration token
+   - Install dependencies: `npm install`
+
+3. **Run the script** - Execute `./upload-notion.sh` from the project root
+
+4. **Automatic page creation** - The script automatically:
+   - Creates a main project page with the project title
+   - Uploads all generated documentation (`prd.md`, `user_stories.md`, `tech_design.md`, etc.)
+   - Organizes content with proper Notion formatting and structure
+   - Creates a hierarchical page structure for easy navigation
+
 ## File Structure
 
 - `overview.md` - Project concept and goals
@@ -126,6 +151,7 @@ Use the automated Linear uploader script to create Linear issues from your `task
 - `ui_design.md` - UI Design (generated, if applicable)
 - `tasks.json` - Prioritized task list (generated)
 - `linear/` - Linear uploader script and configuration
+- `notion/` - Notion uploader script and configuration
 
 ## Best Practices
 
@@ -133,15 +159,18 @@ Use the automated Linear uploader script to create Linear issues from your `task
 2. **Iterate on Documentation** - Review and refine each generated document before proceeding to the next
 3. **Validate Tasks** - Ensure the generated tasks accurately reflect your project requirements
 4. **Configure Linear Uploader** - Set up your Linear API key and team configuration before running the uploader
-5. **Maintain Consistency** - Keep all documentation and tasks aligned with your project vision
+5. **Configure Notion Integration** - Set up your Notion integration token and parent page ID before uploading documentation
+6. **Maintain Consistency** - Keep all documentation and tasks aligned with your project vision
 
 ## Getting Help
 
 If you encounter issues or need assistance:
 1. Review the generated documentation for completeness
 2. Check that your Linear API key is properly configured in `.env`
-3. Ensure your `project_metadata.json` contains accurate information
-4. Verify that your `overview.md` provides sufficient context for AI generation
-5. Check the `linear/README-linear-uploader.md` for detailed uploader instructions
+3. Check that your Notion integration token is properly configured in `notion/.env`
+4. Ensure your `project_metadata.json` contains accurate information, including the correct `notion_parent_page_id`
+5. Verify that your `overview.md` provides sufficient context for AI generation
+6. Check the `linear/README-linear-uploader.md` for detailed Linear uploader instructions
+7. Verify that your Notion integration has access to the parent page specified in `project_metadata.json`
 
-This template provides a comprehensive foundation for AI-assisted project development, from initial concept to detailed task management and Linear integration.
+This template provides a comprehensive foundation for AI-assisted project development, from initial concept to detailed task management, Linear integration, and Notion documentation hosting.
