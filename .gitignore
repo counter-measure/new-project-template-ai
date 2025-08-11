@@ -360,16 +360,12 @@ coverage/
 # Data files (exclude large data files but keep project-specific ones)
 *.csv
 *.json
+!project_metadata.example.json
 !package.json
 !package-lock.json
 !tsconfig.json
 !eslintrc.json
 !prettierrc.json
-!settlement_duration_percentiles_final.csv
-!settlement_duration_percentiles_with_asset.csv
-!settlement_duration_percentiles_with_asset.json
-!route_category_averages.json
-!chain_classification.json
 
 # Database files
 *.db

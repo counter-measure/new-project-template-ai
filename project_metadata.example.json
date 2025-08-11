@@ -1,0 +1,12 @@
+{
+    "project_name": "Test Project",
+    "teams": ["Product"],
+    "notion_parent_page_id": "243972498734239847",
+    "notion_docs": [
+        "prd.md",
+        "user_stories.md",
+        "tech_design.md",
+        "tech_requirements.md",
+        "ui_design.md"
+    ]
+}
